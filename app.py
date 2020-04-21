@@ -20,8 +20,8 @@ def redirect_url():
 @app.route("/list")
 def lists():
     todos_1= todos.find()
-    al="active"
-    return render_template('index.html', al=al, todos = todos_1, title=title, heading=heading)    
+    ar1="active"
+    return render_template('index.html', ar1=ar1, todos = todos_1, title=title, heading=heading)    
 
 @app.route("/")
 @app.route("/incomplete")
