@@ -7,8 +7,9 @@ verify_ssl = true
 pylint = "*"
 
 [packages]
+flask = "*"
+bson-py3compat = "*"
 pymongo = "*"
-bson = "*"
 
 [requires]
 python_version = "3.7"

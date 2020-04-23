@@ -3,7 +3,7 @@ from bson import ObjectId
 from pymongo import MongoClient
 import os
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 title = "To-Do sample application with Flask and MongoDB"
 heading = "To-Do Reminder with Flask and MongoDB"
@@ -13,9 +13,7 @@ db = client.mymongodb
 todos = db.todos
 
 def redirect_url():
-    return request.args.get('next') or \ 
-    request.referrer or \
-    url_for('index')
+    return request.args.get('next') or request.referrer or url_for('index')
 
 @app.route("/list")
 def lists():
@@ -42,9 +40,9 @@ def done():
     id = request.values.get("_id") 
     task = todos.find({"_id":ObjectId(id)})  
     if(task[0]["done"] == "yes"):
-        todos.update({"_id":ObjectId(id), {"$set": {"done": "no"}}}) 
+        todos.update({"_id":ObjectId(id)}, {"$set": {"done": "no"}}) 
     else:
-        todos.update({"_id":ObjectId(id), {"$set": {"done": "yes"}}})  
+        todos.update({"_id":ObjectId(id)}, {"$set": {"done": "yes"}})  
     redir = redirect_url()
 
     return redirect(redir)
@@ -88,7 +86,7 @@ def search():
         todos_1 = todos.find({refer:ObjectId(key)})  
     else:
         todos_1 = todos.find({refer:key})
-    return render_template('searchilst.html', todos=todos_1, title = title, heading = heading)          
+    return render_template('searchlist.html', todos=todos_1, title = title, heading = heading)          
 
 if __name__ =="__main__" :
 

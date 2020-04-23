@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{title}}</title>
-    <link rel="stylesheet" type="text/css" href="/static/assets/style.css"/>
-    <link rel="stylesheet" type="text/css" href="/static/assets/emoji.css" />
-    <script src="/static/assets/emoji.js"></script>
-    <script src="/static/assets/emoji.js"></script>
+    <title>{{ title }}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='assets/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'assets/emoji.css') }}">
+    <script src="{{ url_for('static', filename='assets/twemoji.js.min.js') }}"></script>
+    <script src="{{ url_for('static', filename ='assets/emoji.js') }}"></script>
 </head>
 <body>
-    <h1>{{heading}}</h1>
-    <div class = "navbar">
+    <h1>{{ heading }}</h1>
+        <div class="navbar">
         <ul>
             <li><a href="/list" class="{{ ar1 }}">All</a>
             </li>
