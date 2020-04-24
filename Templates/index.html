@@ -56,7 +56,7 @@
         </tr>
         {% for todo in todos %}
         <tr class="datas">
-            <td><a href="./done?_id={{ todo['_id] }}'">
+            <td><a href="./done?_id={{ todo['_id'] }}">
             <input type="image" src="static/images/{{ todo['done'] }}.png" alt="Submit ME"></a>
             </td>
             <td class="name">{{ todo["name"] }}</td>
@@ -81,7 +81,7 @@
             </tr>
             <tr>
                 <td>
-                    <input type=" text" name="name" placeholder="Taskname" >
+                    <input type="text" name="name" placeholder="Taskname" >
                 </td>
                 <td>
                 <textarea name="desc" cols="30" rows="1" placeholder=" Enter Description here..." required></textarea>        

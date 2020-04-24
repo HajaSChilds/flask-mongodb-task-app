@@ -1,0 +1,94 @@
+h1 {
+    font-family: "Times New Romans", Gadget, sans-serif;
+}
+
+body{
+    color: white;
+    background-color: black;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+table{
+    width: 95%;
+    border-collapse:collapse;
+    table-layout: fixed;
+}
+
+table#close{
+    table-layout:default;
+    border-collapse:seperate;
+    border-spacing: 5px 5px;
+    border:none;
+    vertical-align:top;
+}
+
+table.none td{
+    border:none;
+}
+
+tr.row td{
+    text-decoration:italic;
+}
+
+th.status{
+    width: 5%
+}
+
+th.name{
+    width:20%
+}
+
+th.desc{
+    width: 40%;
+    padding: 5px 5px 5px 5px;
+}
+
+th.date{
+    width: 8%;
+}
+
+th.pr{
+    width:7%
+}
+
+th.func1{
+    width:6%
+}
+
+th.func2{
+    width:5%
+}
+
+input[type=submit] {
+    width: 20em;
+    height: 2em;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li a {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+a.active {
+    background-color: #4CAF50
+}
+
+li a:hover{
+    background-color: yellowgreen;
+}
