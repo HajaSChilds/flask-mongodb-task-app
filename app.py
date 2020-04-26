@@ -13,11 +13,11 @@ db = client.mymongodb
 todos = db.todos
 
 def redirect_url():
-    return request.args.get('next') or request.referrer or url_for('index')
+    return request.args.get('.next') or request.referrer or url_for('.index')
 
 @app.route("/list")
 def lists():
-    todos_1= todos.find()
+    todos_1 = todos.find()
     ar1="active"
     return render_template('index.html', ar1=ar1, todos = todos_1, title=title, heading=heading)    
 
@@ -58,7 +58,7 @@ def addTask():
 
 @app.route("/remove")
 def deleteTask():
-    key = request.values.get("_id")
+    id = request.values.get("_id")
     task = todos.find({"_id":ObjectId(id)})
     return render_template('update.html', tasks = task, heading = heading, title = title)
 
@@ -74,7 +74,7 @@ def updateTask():
     desc = request.values.get("desc")
     date = request.values.get("date")
     priority = request.values.get("priority")
-    id = request.values.get("id")
+    id = request.values.get("_id")
     todos.update({"_id":ObjectId(id)}, {'$set':{"name" : name, "desc" : desc, "date": date, "priority": priority}})
     return redirect("/")
 
