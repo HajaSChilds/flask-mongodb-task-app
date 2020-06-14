@@ -1,4 +1,4 @@
-# FlaskWithMongoTaskApp
+# Flask With Mongo Task App
 This is a To-Do app built using Python Flask and MongoDB: 
 
 Here is my version for now:
